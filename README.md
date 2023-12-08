@@ -11,3 +11,6 @@ cycle train python train.py --name expername --gpu_ids 0,1 --n_epochs 100 --n_ep
 
 test cp ./log/expername/latest_net_G_A.pth ./log/expername/latest_net_G.pth
         python test.py --name expername --no_dropout --dataroot /opt/data/private/TBdetection/Task_ribsegment/cyclegan/data/szmc_0_ribfrac.json
+
+segnet
+python train.py experiments/resnet50_12cls/train_config.yaml
