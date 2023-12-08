@@ -1,0 +1,41 @@
+exper_name: msresunet
+
+seed: 1
+device: cuda
+device_list: [0]
+num_workers: 8
+batch_size: 8
+
+json_path: '/opt/data/private/TBdetection/Task_ribsegment/resunet/drr_12multicls.json'
+
+logger_dir: 'log'
+
+checkpoints:
+  full_folder: model_checkpoints
+  best_folder: model_checkpoints
+  topk: 5
+
+image_size: 512
+model:
+  freeze: False
+  pretrained: True
+  n_classes: 12
+
+loss:
+  weights:
+    dice: 1
+    focal: 1
+
+lr: 0.0001
+weight_decay: 0.000005
+
+epoches: 100
+grad_clip: 0.1
+grad_accum: 4
+early_stopping: 100
+
+evaluation:
+  score_threshold: 0.3
+  area_threshold: 100
+  threshold_search_list: [0.3, 0.4, 0.5, 0.6, 0.7, 0.8]
+  area_search_list: [10,20,30]
