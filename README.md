@@ -36,6 +36,9 @@ A framework for rib segmentation in CXR images based on unsupervised domain adap
      ```bash
      cp ./log/expername/latest_net_G_A.pth ./log/expername/latest_net_G.pth
      python test.py --name yourExperName --no_dropout --dataroot yourJsonDataRoot
+
+## Citation
+If you use this code for your research, please cite our papers.
    
 ## References
 [1] Campo, M.I., Pascau, J. and Estépar, R.S.J., 2018, April. Emphysema quantification on simulated X-rays through deep learning techniques. In 2018 IEEE 15th International Symposium on Biomedical Imaging (ISBI 2018) (pp. 273-276). IEEE.
