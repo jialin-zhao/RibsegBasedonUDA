@@ -1,5 +1,11 @@
 # RibsegBasedonUDA
 
+A framework for rib segmentation in CXR images based on unsupervised domain adaptation
+
+![framework](/images/resunet-ribsegroute3.png)
+
+
+
 data format json
   - trainA
   - trainB
