@@ -4,19 +4,33 @@ A framework for rib segmentation in CXR images based on unsupervised domain adap
 
 ![framework](/images/resunet-ribsegroute3.png)
 
+## Data
 
-
-data format json
+- DRRs generation: We employ a parallel projection model [1] to generate DRR images from CT images.
+- data format in Cycle-GAN: json
   - trainA
   - trainB
   - testA
   - testB
+- data format in SegNet: json
+  - train
+    - imgs
+    - masks
+  - test
+    - imgs
+    - masks
 
-cycle train python train.py --name expername --gpu_ids 0,1 --n_epochs 100 --n_epochs_decay 100 --dataroot /opt/data/private/TBdetection/Task_ribsegment/cyclegan/data/szmc_0_ribfrac.json --batch_size 8
-  dataroot 
+## Usage
 
-test cp ./log/expername/latest_net_G_A.pth ./log/expername/latest_net_G.pth
-        python test.py --name expername --no_dropout --dataroot /opt/data/private/TBdetection/Task_ribsegment/cyclegan/data/szmc_0_ribfrac.json
-
-segnet
-python train.py experiments/resnet50_12cls/train_config.yaml
+1. SegNet 
+   - `cd segnet`
+   - open the file `train_config.yaml` and set your json path and other parameters
+   - run `python train.py train_config.yaml`
+  
+2. Cycle-GAN 
+   - `cd cyclegan`
+   - training: `python train.py --name yourExperName --gpu_ids 0,1 --n_epochs 100 --n_epochs_decay 100 --dataroot yourJsonDataRoot --batch_size 8`
+   - test: `cp ./log/expername/latest_net_G_A.pth ./log/expername/latest_net_G.pth` and `python test.py --name yourExperName --no_dropout --dataroot yourJsonDataRoot`
+   
+## References
+[1] Campo, M.I., Pascau, J. and Estépar, R.S.J., 2018, April. Emphysema quantification on simulated X-rays through deep learning techniques. In 2018 IEEE 15th International Symposium on Biomedical Imaging (ISBI 2018) (pp. 273-276). IEEE.
