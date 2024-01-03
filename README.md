@@ -39,6 +39,14 @@ A framework for rib segmentation in CXR images based on unsupervised domain adap
 
 ## Citation
 If you use this code for your research, please cite our papers.
-   
+```bash
+@article{zhao2023rib,
+  title={Rib Segmentation in Chest X-ray Images based on Unsupervised Domain Adaptation},
+  author={Zhao, jialin and Nie, Ziwei and Shen, Jie and He, Jian and Yang, Xiaoping},
+  journal={Biomedical Physics \& Engineering Express},
+  year={2023}
+}
+```
+
 ## References
 [1] Campo, M.I., Pascau, J. and Estépar, R.S.J., 2018, April. Emphysema quantification on simulated X-rays through deep learning techniques. In 2018 IEEE 15th International Symposium on Biomedical Imaging (ISBI 2018) (pp. 273-276). IEEE.
